@@ -17,6 +17,11 @@ function Tarea(nombre, urgencia) {
   this.urgencia = urgencia;
 }
 
-const tarea1 = new Tarea('Aprender Javascript y React', 'Urgente');
-console.log(tarea1);
-console.log(tarea1.nombre)
+//Agregar un prototype a Tarea
+Tarea.prototype.mostrarInformacionTarea = function() {
+    return `La tarea ${this.nombre} tiene prioridad de ${this.urgencia}`;
+  }
+
+const tarea1 = new Tarea("Aprender Javascript y React", "Urgente");
+
+console.log(tarea1.mostrarInformacionTarea());
