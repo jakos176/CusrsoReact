@@ -1,5 +1,14 @@
 //Crear variables 
 
-var aprendiendoJS ;
-aprendiendoJS = "Juan"
-console.log(aprendiendoJS)
+//variables con var
+var aprendiendoJS = 'Javascript';
+
+
+//variables con const
+const aprender = 'Javascript';
+
+
+//variables con let
+let aprendizaje = true;
+
+console.log(aprendizaje)
