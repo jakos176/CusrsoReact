@@ -1,7 +1,18 @@
-//arrow functions
+//Objetos
 
-let viajando =  destino =>  `Viajando a la ciudad de: ${destino}`;
+//Object literal
 
-let viaje = viajando("Paris");
+const persona = {
+  nombre: "Juan",
+  profesion: "Desarrollador web",
+  edad: 50
+};
 
-console.log(viaje);
+let persona = "Juan";
+let profesion = "Desarrollador Web";
+
+console.log(persona);
+console.log(profesion);
+console.log(persona.nombre);
+console.log(persona.edad);
+console.log(persona[profesion]);
