@@ -1,14 +1,6 @@
-//Crear variables 
+//Template Strings
+const nombre = 'Edu';
+const trabajo = 'Desarrollador';
 
-//variables con var
-var aprendiendoJS = 'Javascript';
-
-
-//variables con const
-const aprender = 'Javascript';
-
-
-//variables con let
-let aprendizaje = true;
-
-console.log(aprendizaje)
+//concatenar String
+console.log (`Nombre ${nombre}, Trabajo: ${trabajo}`)
