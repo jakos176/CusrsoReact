@@ -1,27 +1,19 @@
-//Objetos
-
-//Object literal
-
-const persona = {
-  nombre: "Juan",
-  profesion: "Desarrollador web",
-  edad: 50,
+//Destructuring de objetos
+const aprendiendoJS = {
+  version: {
+    nueva: "ES6+",
+    anterior: "ES6",
+  },
+  frameworks: ["React", "Angular", "VueJs"],
 };
 
-console.log(persona);
+//Destructuring es extraer valores de un objeto
+// console.log(aprendiendoJS);
 
-//Object constructor
+//version anterior
+// let version = aprendiendoJS.version.nueva;
+// let framework = aprendiendoJS.frameworks[1];
 
-function Tarea(nombre, urgencia) {
-  this.nombre = nombre;
-  this.urgencia = urgencia;
-}
-
-//Agregar un prototype a Tarea
-Tarea.prototype.mostrarInformacionTarea = function() {
-    return `La tarea ${this.nombre} tiene prioridad de ${this.urgencia}`;
-  }
-
-const tarea1 = new Tarea("Aprender Javascript y React", "Urgente");
-
-console.log(tarea1.mostrarInformacionTarea());
+//version nueva
+let { nueva } = aprendiendoJS.version;
+console.log(nueva);
