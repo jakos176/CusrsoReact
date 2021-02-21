@@ -1,16 +1,13 @@
-//object literal enhancement
+//metodos o funciones en un objeto
 
-const band = "Metallica";
-const genero = "Heavy metal";
-const canciones = ["Master Of Puppets", "Enter Sandman", "Nonpoint"];
-
-//form anterior
-const metallica = {
-  banda: band,
-  genero: genero,
-  canciones: canciones,
+const persona = {
+	nombre: "Juan",
+	trabajo: "Desarrollador web",
+	edad: 500,
+	musicaRock: true,
+	mostrarInformacion() {
+		console.log(`${this.nombre} es ${this.trabajo} y su trabajo es ${this.trabajo}`);
+	},
 };
 
-//forma sencilla o nueva
-const metallica1 = { band, genero, canciones };
-console.log(metallica1);
+persona.mostrarInformacion();
