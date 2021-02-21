@@ -1,8 +1,7 @@
-//parametros por default en las funciones
+//arrow functions
 
-const actividad  = function actividad(nombre = 'Edu', actividad = 'Deporte') {
-  console.log(`La persona ${nombre}, esta realizando la activadad ${actividad}`);
-}
+let viajando =  destino =>  `Viajando a la ciudad de: ${destino}`;
 
-actividad("Juan", "Aprender Javascript");
-actividad();
+let viaje = viajando("Paris");
+
+console.log(viaje);
