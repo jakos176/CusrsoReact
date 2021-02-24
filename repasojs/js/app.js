@@ -1,26 +1,32 @@
-//Spread operator
+//metodos en arrays
 
-let lenguajes = ["JavaScript", "Php", "Python"];
-// let frameworks = ["React", "Laravel", "Django"];
+const personas = [
+	{ nombre: "Juan", edad: 23, aprendiendo: "Javascript" },
+	{ nombre: "Pablo", edad: 18, aprendiendo: "PHP" },
+	{ nombre: "Alejandra", edad: 21, aprendiendo: "AdobeXD" },
+	{ nombre: "Caren", edad: 30, aprendiendo: "Python" },
+	{ nombre: "Miguel", edad: 35, aprendiendo: "ReactJS" },
+];
 
-//Unir arrays en uno solo
-// let combinacion = lenguajes.concat(frameworks);
+// console.log(personas);
 
-// console.log(combinacion);
+//mayores de 28
+const mayores = personas.filter((persona) => {
+	return persona.edad > 28;
+});
 
-//forma nueva
-// let combinacion = [...lenguajes, ...frameworks];
+console.log(mayores);
 
-//let [ultimo] = [...lenguajes].reverse();
+//que aprende alejandra y su edad
+const alejandra = personas.find((persona) => {
+	return persona.nombre === "Alejandra";
+});
 
-//console.log(ultimo);
+console.log(alejandra);
 
-function suma(a, b, c) {
-	console.log(a + b + c);
-}
+//Media de las edades
+let total = personas.reduce((edadTotal, persona) => {
+	return edadTotal + persona.edad;
+}, 0);
 
-const numeros = [1, 2, 3];
-
-suma(...numeros);
-
-console.log(lenguajes);
+console.log(total / 5);
