@@ -1,21 +1,28 @@
-//Promises
+//Promises en Ajax
 
-const aplicarDescuento = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		let descuento = true;
+const DescargarUsuarios = (cantidad) =>
+	new Promise((resolve, reject) => {
+		const api = `https://randomuser.me/api?results=${cantidad}&nat=us`;
 
-		if (descuento) {
-			resolve("Descuento aplicado");
-		} else {
-			reject("No se pudo aplicar el descuento");
-		}
-	}, 3000);
-});
+		//llamada a api
 
-aplicarDescuento
-	.then((resultado) => {
-		console.log(resultado);
-	})
-	.catch((error) => {
-		console.log(error);
+		const xhr = new XMLHttpRequest();
+
+		xhr.open("GET", api, true);
+
+		xhr.onload = () => {
+			if (xhr.status === 200) {
+				resolve(JSON.parse(xhr.responseText).results);
+			} else {
+				reject(Error(xhr.statusText));
+			}
+		};
+
+		xhr.onerror = (error) => reject(error);
+		xhr.send();
 	});
+
+DescargarUsuarios(20).then(
+	(miembros) => console.log(miembros),
+	(error) => console.error(new Error("Hubo un error:" + error))
+);
