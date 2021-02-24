@@ -1,13 +1,26 @@
-//metodos o funciones en un objeto
+//Spread operator
 
-const persona = {
-	nombre: "Juan",
-	trabajo: "Desarrollador web",
-	edad: 500,
-	musicaRock: true,
-	mostrarInformacion() {
-		console.log(`${this.nombre} es ${this.trabajo} y su trabajo es ${this.trabajo}`);
-	},
-};
+let lenguajes = ["JavaScript", "Php", "Python"];
+// let frameworks = ["React", "Laravel", "Django"];
 
-persona.mostrarInformacion();
+//Unir arrays en uno solo
+// let combinacion = lenguajes.concat(frameworks);
+
+// console.log(combinacion);
+
+//forma nueva
+// let combinacion = [...lenguajes, ...frameworks];
+
+//let [ultimo] = [...lenguajes].reverse();
+
+//console.log(ultimo);
+
+function suma(a, b, c) {
+	console.log(a + b + c);
+}
+
+const numeros = [1, 2, 3];
+
+suma(...numeros);
+
+console.log(lenguajes);
