@@ -1,44 +1,20 @@
-//Promises en Ajax
+// Programacion orientada a objetos
 
-const DescargarUsuarios = (cantidad) =>
-    new Promise((resolve, reject) => {
-        const api = `https://randomuser.me/api?results=${cantidad}&nat=us`;
+class Tarea {
+    constructor(nombre, prioridad) {
+        this.nombre = nombre;
+        this.prioridad = prioridad;
+    }
 
-        //llamada a api
-
-        const xhr = new XMLHttpRequest();
-
-        xhr.open("GET", api, true);
-
-        xhr.onload = () => {
-            if (xhr.status === 200) {
-                resolve(JSON.parse(xhr.responseText).results);
-            } else {
-                reject(Error(xhr.statusText));
-            }
-        };
-
-        xhr.onerror = (error) => reject(error);
-        xhr.send();
-    });
-
-DescargarUsuarios(20).then(
-    (miembros) => imprimitHTML(miembros),
-    (error) => console.error(new Error("Hubo un error:" + error))
-);
-
-
-function imprimitHTML(usuarios) {
-    let html = '';
-    usuarios.forEach(usuario => {
-        html += `<li>
-            Nombre: ${usuario.name.first} ${usuario.name.last}
-            Pais: ${usuario.nat} 
-            Imagen:
-                    <img src="${usuario.picture.medium}"/>
-            </li>`;
-    });
-
-    const contenedorApp = document.querySelector('#app');
-    contenedorApp.innerHTML = html;
+    mostrar() {
+        console.log(`${this.nombre} tiene una prioridad de ${this.prioridad}`)
+    }
 }
+
+
+//crear los objetos
+let tarea1 = new Tarea('Aprender Javascript', 'Alta');
+let tarea2 = new Tarea('Aprender PHP', 'Baja');
+
+tarea1.mostrar();
+tarea2.mostrar();
