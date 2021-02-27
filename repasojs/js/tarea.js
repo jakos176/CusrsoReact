@@ -1,11 +1,10 @@
-const nombreTarea = 'Pasear al perro';
-const tarea = 'tarea';
+//exportar variable
+export const nombreTarea = 'Pasear al perro';
 
-//Solo un export default por documento
-export default {
-    nombre: nombreTarea,
-    tarea: tarea
-};
+//export una funcion
+export const crearTarea = (tarea, urgencia) => {
+    return `La tarea ${tarea} tiene una urgencia de ${urgencia}`;
+}
 
 class Tarea {
     constructor(nombre, prioridad) {
